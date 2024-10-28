@@ -176,7 +176,7 @@ body {
 article {
   background: var(--eerie-black-2);
   border: 1px solid var(--jet);
-  border-radius: 20px;
+  border-radius: 25px;
   padding: 15px;
   box-shadow: var(--shadow-1);
   z-index: 1;
@@ -331,13 +331,13 @@ main {
 
 .sidebar {
   margin-bottom: 15px;
-  max-height: 112px;
-  overflow: hidden;
+  max-height: none;
+  overflow: visible;
   transition: var(--transition-2);
 }
 
 .sidebar.active {
-  max-height: 405px;
+  max-height: none;
 }
 
 .sidebar-info {
@@ -885,6 +885,21 @@ main {
   line-height: 1.6;
 }
 
+/* Set the main heading above Skills (e.g., "Technical Skills") to white */
+.skills-title {
+  color: var(--white-1); /* Assuming --white-1 is defined as white */
+}
+
+/* Set individual skill titles (like "Programming Languages") to white */
+.skills .title-wrapper h5 {
+  color: var(--white-1);
+}
+
+/* Set skill descriptions (e.g., Python, C, etc.) to golden */
+.skills .title-wrapper p {
+  color: var(--vegas-gold); /* Golden color variable */
+}
+
 /**
    * skills 
    */
@@ -1108,6 +1123,10 @@ main {
     #CONTACT
   \*-----------------------------------*/
 
+.project-list {
+  min-height: 500px; /* Adjust based on your layout */
+}
+
 .mapbox {
   position: relative;
   height: 250px;
@@ -1138,7 +1157,7 @@ main {
 }
 
 .input-wrapper {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr;
   gap: 25px;
   margin-bottom: 25px;
@@ -1681,7 +1700,7 @@ textarea.form-input::-webkit-resizer {
 
   .sidebar,
   article {
-    width: 950px;
+    width: 950x;
     box-shadow: var(--shadow-5);
   }
 
@@ -1831,12 +1850,19 @@ textarea.form-input::-webkit-resizer {
     max-height: max-content;
     height: 100%;
     margin-bottom: 0;
-    padding-top: 60px;
+    margin-left: 20px;
+    padding-top: 40px;
     z-index: 1;
   }
 
   .sidebar-info {
     flex-direction: column;
+    width: 245px;
+  }
+
+  .contact-link {
+    white-space: normal; /* Allow wrapping for long text */
+    word-break: break-word;
   }
 
   .avatar-box img {
@@ -1868,7 +1894,7 @@ textarea.form-input::-webkit-resizer {
   .contact-info :is(.contact-link) {
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: initial;
   }
 
   .contact-info :is(.contact-link, time, address) {
